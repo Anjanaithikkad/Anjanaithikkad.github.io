@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjana I | Developer Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #00ff00;
+            --secondary-color: #58a6ff;
+            --font-main: 'Courier New', Courier, monospace;
+        }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        #terminal {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .header { border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 20px; }
+        .prompt { color: var(--accent-color); font-weight: bold; }
+        .command { color: var(--secondary-color); font-weight: bold; }
+        .section { margin-bottom: 30px; display: none; }
+        .visible { display: block; animation: fadeIn 0.5s ease-in; }
+        h1, h2, h3 { color: var(--secondary-color); margin-top: 0; }
+        ul { list-style-type: square; color: var(--text-color); }
+        a { color: var(--accent-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .blinking-cursor {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--accent-color);
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .btn {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: var(--font-main);
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { background-color: var(--accent-color); color: var(--bg-color); }
+        .tech-tag {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="terminal">
+    <div class="header">
+        <h1>guest@anjana-sys:~$ <span id="typewriter"></span><span class="blinking-cursor">_</span></h1>
+        <p>System initialized. Welcome to the interactive resume of Anjana I.</p>
+        <p>Contact: <a href="mailto:anjanaithikkad4277@gmail.com">anjanaithikkad4277@gmail.com</a> | <a href="https://github.com/Anjanaithikkad" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/anjana-ithikkad-5950512b0" target="_blank">LinkedIn</a></p>
+    </div>
+
+    <div>
+        <p><span class="prompt">guest@anjana-sys:~$</span> <span class="command">help</span></p>
+        <p>Click the commands below to execute them and explore the system:</p>
+        <button class="btn" onclick="showSection('summary')">./whoami</button>
+        <button class="btn" onclick="showSection('skills')">ls skills/</button>
+        <button class="btn" onclick="showSection('experience')">cat experience.log</button>
+        <button class="btn" onclick="showSection('projects')">./execute_projects.sh</button>
+        <button class="btn" onclick="showSection('achievements')">sudo get_achievements</button>
+    </div>
+
+    <div id="summary" class="section">
+        <p><span class="prompt">guest@anjana-sys:~$</span> <span class="command">./whoami</span></p>
+        <h3>Professional Summary</h3>
+        <p>MCA student with strong programming fundamentals and hands-on experience in software development and e-governance workflows. Skilled in building functional applications, analyzing requirements, and solving complex problems. Ready to deploy impactful code to production.</p>
+    </div>
+
+    <div id="skills" class="section">
+        <p><span class="prompt">guest@anjana-sys:~$</span> <span class="command">ls skills/</span></p>
+        <h3>Technical Dependencies loaded:</h3>
+        <p><span class="tech-tag">Java</span> <span class="tech-tag">Python</span> <span class="tech-tag">C</span> <span class="tech-tag">SQL</span> <span class="tech-tag">HTML/CSS</span> <span class="tech-tag">JavaScript</span> <span class="tech-tag">Laravel</span> <span class="tech-tag">MERN Stack</span> <span class="tech-tag">Git</span></p>
+    </div>
+
+    <div id="experience" class="section">
+        <p><span class="prompt">guest@anjana-sys:~$</span> <span class="command">cat experience.log</span></p>
+        <h3>Experience Logs</h3>
+        <ul>
+            <li><strong>Intern | Center for Management and Development (CMD)</strong> (Dec 2025 - Current)
+                <br>> Engineering a Digital Document and File System workflow for internal staff.
+                <br>> Ensuring compliance with e-governance principles and data security.
+            </li>
+            <li><strong>Intern - Full Stack (MERN) | ICT Academy of Kerala</strong> (Sep 2025)
+                <br>> Completed intensive training in full-stack web development using MongoDB, Express.js, React, and Node.js.
+            </li>
+        </ul>
+    </div>
+
+    <div id="projects" class="section">
+        <p><span class="prompt">guest@anjana-sys:~$</span> <span class="command">./execute_projects.sh</span></p>
+        <h3>Deployed Projects</h3>
+        <ul>
+            <li><strong>Digital Documentation and File System (Workflow):</strong> Built with Laravel. Secure and efficient digital file management workflow for government internal staff.</li>
+            <li><strong>AI-Based Wellness & Academic Recommendation System:</strong> Built with Laravel. Analyzes student behavior (sleep, focus) to generate AI-based suggestions.</li>
+            <li><strong>Smart Trolley Using RFID:</strong> Hardware/Software integration using microcontrollers and LCD displays to automate item scanning and reduce billing times.</li>
+        </ul>
+    </div>
+
+    <div id="achievements" class="section">
+        <p><span class="prompt">guest@anjana-sys:~$</span> <span class="command">sudo get_achievements</span></p>
+        <h3>System Overrides & Achievements</h3>
+        <ul>
+            <li>🏆 <strong>National-level Kickboxing Champion:</strong> Showcased discipline, mental toughness, strategic thinking, and high performance under competitive conditions.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Typewriter effect for the header
+    const text = "./initiate_portfolio.sh";
+    let i = 0;
+    const speed = 100;
+
+    function typeWriter() {
+        if (i < text.length) {
+            document.getElementById("typewriter").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    
+    // Start typing effect on load
+    window.onload = typeWriter;
+
+    // Function to show sections when buttons are clicked
+    function showSection(sectionId) {
+        // Hide all sections first
+        const sections = document.querySelectorAll('.section');
+        sections.forEach(sec => sec.classList.remove('visible'));
+        
+        // Show the clicked section
+        const target = document.getElementById(sectionId);
+        target.classList.add('visible');
+    }
+</script>
+
+</body>
+</html>
